@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motobike Store</title>
+    <title>Motorbike Store</title>
     <link href="css/estilos.css" rel="stylesheet">
     <script type="module" src="cmp/mi-footer.js"></script>
 </head>
@@ -13,7 +13,8 @@
     <header>
         <h1>
             <p class="titulo">
-                Motobike Store México
+                Motorbike Store México
+
             </p>
         </h1>
     </header>
@@ -21,14 +22,20 @@
     <nav>
         <ul>
             <h3>
-                <a href="index.html">
-                    <li>Principal</li>
-                </a>
-                <li>Motocicletas</li>
+                <div class="btn-group">
+                    <a href="cliente.html">
+                        <button class="button">Principal</button>
+                    </a>
+                    <button class="button">Motocicletas</button>
+                </div>
             </h3>
         </ul>
     </nav>
 
+    <br>
+    <br>
+    <br>
+    <br>
 
     <section>
         <article>
@@ -41,35 +48,40 @@
         <blockquote>Mensaje 1</blockquote>
     </aside>
 
+    <img src="imagenes/1.png">
     <form action="form">
         <p class="forma">
             <label>
                 Nombre/Empresa:
-                <input type="text" name="nombre">
+                <input type="text" required name="nombre">
             </label>
             <label>
                 Asunto:
-                <input type="text" name="asunto">
+                <input type="text" required name="asunto">
             </label>
             <label>
                 Email:
-                <input type="text" name="correo">
+                <input type="text" required name="correo">
             </label>
             <label>
                 Estado:
-                <input type="text" name="estado">
+                <input type="text" required name="estado">
             </label>
             <label>
                 Mensaje:
-            <textarea name="mensaje" ></textarea>
+                <textarea required name="mensaje"></textarea>
             </label>
-            
-            <button>Enviar</button>
+            <p><button class="button button1" onclick="alert('Mensaje Eviado')">Calcular</button></p>
+            <button class="button button1" type="button" onclick="alert('Mensaje Eviado')">Enviar</button>
         </p>
         <p>
-
     </form>
 
+    <p class="forma">
+        Motorbike Store de México S. A. DE C. V., con domicilio en Avenida Presidente Adolfo López Mateos No. 2, Colonia
+        Atizapan Centro C. P. 52900 utilizará sus datos personales aquí recabados para proveer los servicios y productos
+        que ha solicitado, informarle sobre cambios en los mismos y evaluar la calidad del servicio que le brindamos.
+    </p>
 
 
     <footer>

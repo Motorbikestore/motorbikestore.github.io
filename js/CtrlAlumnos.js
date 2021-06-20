@@ -68,7 +68,7 @@ function htmlFila(doc) {
   const data = doc.data();
   const marca = cod(data.marca);
   const nombre = cod(data.nombre);
-  const year = cod(data.year)
+  const year = cod(data.year);
   const precio = cod(data.precio);
   const parámetros =
     new URLSearchParams();

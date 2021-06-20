@@ -79,7 +79,7 @@ function htmlFila(doc) {
     `<li>
     <a class="fila" ${parámetros}">
       <strong class="primario">
-        ${marca} ${nombre} ${year} ${precio} 
+      Marca: ${marca}   Modelo: ${nombre}   Año: ${year}   Precio:${precio} 
       </strong>
     </li>`);
 }

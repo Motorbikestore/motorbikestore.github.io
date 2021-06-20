@@ -10,13 +10,7 @@ import {
 
 class MiNav extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = /* html */
-      `<ul>
-        <li>
-          <a href="index.html">
-            Sesión</a>
-        </li>
-      </ul>`;
+    this.innerHTML = /* html */`<ul><li><a href="index.html">Sesión</a></li></ul>`;
     this.ul =
       this.querySelector("ul");
     getAuth().onAuthStateChanged(
@@ -38,16 +32,14 @@ class MiNav extends HTMLElement {
      if (roles.has("Cliente")) {
         html += /* html */
           `<li>
-            <a href=
-              "cliente.html.html">Chat</a>
+            <a href="cliente.html.html">Chat</a>
           </li>`;
       }
       if (roles.has(
         "Administrador")) {
         html += /* html */
           `<li>
-            <a href=
-"motocicletaNuevo.html">Alumnos</a>
+            <a href="motocicletaNuevo.html">Alumnos</a>
           </li>`;
       }
       this.ul.innerHTML += html;

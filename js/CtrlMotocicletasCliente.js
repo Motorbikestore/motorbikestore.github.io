@@ -77,10 +77,10 @@ function htmlFila(doc) {
   return ( /* html */
 
     `<li>
-    ${parámetros}
-      <strong class="primario">
+    <a class="fila" href=
+"motocicleta.html?${parámetros}">
         ${marca} ${nombre} ${year} ${precio}
-      </strong>
+      
     
   </li>`
 

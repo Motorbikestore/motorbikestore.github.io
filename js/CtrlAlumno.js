@@ -7,15 +7,15 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraMotocicletas,
+  muestraAlumnos
 } from "./navegacion.js";
 import {
   tieneRol
 } from "./seguridad.js";
 
-const daoMotocicleta =
+const daoAlumno =
   getFirestore().
-    collection("Motocicleta");
+    collection("Alumno");
 const params =
   new URL(location.href).
     searchParams;
@@ -41,17 +41,20 @@ async function protege(usuario) {
 async function busca() {
   try {
     const doc =
-      await daoMotocicleta.
+      await daoAlumno.
         doc(id).
         get();
     if (doc.exists) {
       /**
        * @type {
           import("./tipos.js").
-                  Motocicleta} */
+                  Alumno} */
       const data = doc.data();
-      forma.nombre.value =
-        data.nombre || "";
+      forma.matricula.value = data.matricula;
+      forma.nombre.value = data.nombre || "";
+      forma.telefono.value = data.telefono || "";
+      forma.grupo.value = data.grupo || "";
+      forma.fecha.value = data.fecha || "";
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
@@ -63,7 +66,7 @@ async function busca() {
     }
   } catch (e) {
     muestraError(e);
-    muestraMotocicletas();
+    muestraAlumnos();
   }
 }
 
@@ -73,27 +76,27 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-    const marca = getString(
-      formData, "marca").trim();
-    const modelo = getString(
-      formData, "modelo").trim();
-    const year = getString(
-      formData, "year").trim();
-    const avatar = formData.get("avatar")
+    const matricula = getString(
+        formData, "matricula").trim();  
+    const nombre = getString(formData, "nombre").trim();
+    const telefono = getString(formData, "telefono").trim();
+    const grupo = getString(formData, "grupo").trim();
+    const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
         import("./tipos.js").
-                Motocicleta} */
+                Alumno} */
     const modelo = {
-      marca,
-      modelo,
-      year,
-      avatar
+      matricula, 
+      nombre,
+      telefono,
+      grupo,
+      fecha
     };
-    await daoMotocicleta.
+    await daoAlumno.
       doc(id).
       set(modelo);
-    muestraMotocicletas();
+    muestraAlumnos();
   } catch (e) {
     muestraError(e);
   }
@@ -103,12 +106,13 @@ async function elimina() {
   try {
     if (confirm("Confirmar la " +
       "eliminación")) {
-      await daoMotocicleta.
+      await daoAlumno.
         doc(id).
         delete();
-      muestraMotocicletas();
+      muestraAlumnos();
     }
   } catch (e) {
     muestraError(e);
   }
 }
+

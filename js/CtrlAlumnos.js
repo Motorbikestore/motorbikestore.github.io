@@ -13,9 +13,9 @@ import {
 /** @type {HTMLUListElement} */
 const lista = document.
   querySelector("#lista");
-const daoMotocicleta =
+const daoAlumno =
   getFirestore().
-    collection("Motocicleta");
+    collection("Alumno");
 
 getAuth().
   onAuthStateChanged(
@@ -32,7 +32,7 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoMotocicleta.
+  daoAlumno.
     orderBy("nombre")
     .onSnapshot(
       htmlLista, errConsulta);
@@ -50,7 +50,7 @@ function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay Motocicleta
+        -- No hay alumnos
         registrados. --
       </li>`;
   }
@@ -64,20 +64,26 @@ function htmlLista(snap) {
 function htmlFila(doc) {
   /**
    * @type {import("./tipos.js").
-                  Motocicleta} */
+                  Alumno} */
   const data = doc.data();
+  const matricula = cod(data.matricula);
   const nombre = cod(data.nombre);
+  var fsf= cod(data.fecha);
+  var fecha = new Date(fsf);
+  var espacio="[   -   ]";
+  var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
       <a class="fila" href=
-  "Motocicleta.html?${parámetros}">
+  "alumno.html?${parámetros}">
         <strong class="primario">
-          ${nombre}
+          ${matricula} ${nombre} ${dformat}
         </strong>
       </a>
+     
     </li>`);
 }
 
@@ -86,3 +92,4 @@ function errConsulta(e) {
   muestraError(e);
   consulta();
 }
+

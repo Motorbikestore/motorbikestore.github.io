@@ -7,16 +7,15 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraPasatiempos,
-  muestraMotocicletas
+  muestraAlumnos
 } from "./navegacion.js";
 import {
   tieneRol
 } from "./seguridad.js";
 
-const daoMotocicleta =
+const daoAlumno =
   getFirestore().
-    collection("Motocicleta");
+    collection("Alumno");
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
 getAuth().onAuthStateChanged(
@@ -39,30 +38,28 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-    const marca = getString(
-      formData, "marca").trim();
-    const modelo = getString(
-      formData, "modelo").trim();
-    const year = getString(
-      formData, "year").trim();
-    const avatar = formData.get("avatar")
+    const matricula = getString(
+        formData, "matricula").trim();  
+    const nombre = getString(formData, "nombre").trim();
+    const telefono = getString(formData, "telefono").trim();
+    const grupo = getString(formData, "grupo").trim();
+    const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
         import("./tipos.js").
-                Pasatiempo} */
+                Alumno} */
     const modelo = {
-      marca,
-      modelo, 
-      year, 
-      avatar
+      matricula,
+      nombre,
+      telefono,
+      grupo,
+      fecha 
     };
-    await daoMotocicleta.
+    await daoAlumno.
       add(modelo);
-    muestraMotocicletas();
+    muestraAlumnos();
   } catch (e) {
     muestraError(e);
   }
 }
-
-
 

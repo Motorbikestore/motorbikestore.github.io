@@ -1,8 +1,3 @@
-export function
-  muestraPasatiempos() {
-  location.href =
-    "pasatiempos.html";
-}
 
 export function
   muestraUsuarios() {
@@ -12,4 +7,8 @@ export function
   muestraAlumnos() {
   location.href =
     "motocicletas.html";
+}
+export function muestramotocicletasCliente {
+  location:href = 
+  "motocicletasCliente.html"
 }

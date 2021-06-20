@@ -11,5 +11,5 @@ export function
 export function
   muestraAlumnos() {
   location.href =
-    "alumnos.html";
+    "motocicletas.html";
 }

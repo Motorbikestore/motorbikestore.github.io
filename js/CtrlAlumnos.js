@@ -69,7 +69,6 @@ function htmlFila(doc) {
   const marca = cod(data.marca);
   const marca = cod(data.marca);
   const nombre = cod(data.nombre);
-  const year = cod(data.year);
   const precio = cond(data.precio);
   const parámetros =
     new URLSearchParams();
@@ -79,7 +78,7 @@ function htmlFila(doc) {
       <a class="fila" href=
   "alumno.html?${parámetros}">
         <strong class="primario">
-          ${marca} ${nombre} ${year} ${precio}
+          ${marca} ${nombre} ${precio}
         </strong>
       </a>
     </li>`);

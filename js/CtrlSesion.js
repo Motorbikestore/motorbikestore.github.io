@@ -49,7 +49,7 @@ async function
       usuario.photoURL || "";
     forma.terminarSesión.
       addEventListener(
-        "click", terminaSesión);
+        "click", terminarSesión);
   } else {
     // No ha iniciado sesión.
     iniciaSesión();

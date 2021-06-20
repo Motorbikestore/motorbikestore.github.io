@@ -15,6 +15,8 @@ class MiNav extends HTMLElement {
         <li>
           <a href="index.html">
             Sesión</a>
+            <a href=
+              "alumnos.html">alumnos</a>
         </li>
       </ul>`;
     this.ul =
@@ -35,7 +37,7 @@ class MiNav extends HTMLElement {
       const roles =
         await cargaRoles(
           usu.email);
-     if (roles.has("Cliente")) {
+      if (roles.has("Cliente")) {
         html += /* html */
           `<li>
             <a href=

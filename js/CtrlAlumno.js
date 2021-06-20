@@ -53,6 +53,7 @@ async function busca() {
       forma.marca.value = data.marca;
       forma.nombre.value = data.nombre || "";
       forma.year.value = data.year || "";
+      forma.precio.value = data.precio || "";
       forma.fecha.value = data.fecha || "";
       forma.addEventListener(
         "submit", guarda);
@@ -79,6 +80,7 @@ async function guarda(evt) {
         formData, "marca").trim();  
     const nombre = getString(formData, "nombre").trim();
     const year = getString(formData, "year").trim();
+    const precio = getString(formData, "precio").trim();
     const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
@@ -88,6 +90,7 @@ async function guarda(evt) {
       marca, 
       nombre,
       year,
+      precio,
       fecha
     };
     await daoAlumno.

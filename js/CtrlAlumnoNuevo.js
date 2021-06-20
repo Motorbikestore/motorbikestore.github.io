@@ -42,6 +42,7 @@ async function guarda(evt) {
         formData, "marca").trim();  
     const nombre = getString(formData, "nombre").trim();
     const year = getString(formData, "year").trim();
+    const precio = getString(formData, "precio").trim();
     const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
@@ -51,6 +52,7 @@ async function guarda(evt) {
       marca,
       nombre,
       year,
+      precio, 
       fecha 
     };
     await daoAlumno.

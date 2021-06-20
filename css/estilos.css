@@ -5,6 +5,9 @@
   body.contacto{
     text-align: center;
   }
+  body.nuevo{
+    text-align: center;
+  }
 
   p.titulo{
     text-align: center;
@@ -74,48 +77,56 @@
     background-color: #1d7dbd;
   }
 
-  .btn-logout .button {
-    background-color: #df9393; 
+  .btn-index .button {
+    position:relative;
+    left:40%;
+
+    background-color: #186aa0;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
     cursor: pointer;
-    width: 250px;
   }
   
-  .btn-logout .button:hover {
-    background-color: #da2e2e; 
-    color: black; 
-    border: 2px solid #da2e2e;
+  .btn-index .button:hover {
+    background-color: #1d7dbd;
   }
 
-
-
-  button {
-    background-color: #4CAF50; 
+  .btn-logout .button1 {
+    background-color: #a01818;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
     cursor: pointer;
-    width: 250px;
   }
-  .button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
+  
+  .btn-logout .button1:hover {
+    background-color: #bd1d1d;
+  }
+  
 
+
+  .btn-save .button2{
+    background-color: #18a02f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn-save .button2:hover{
+    background-color: #1dbd2a;
   }
 
 
@@ -138,3 +149,4 @@
     font-size: small;
     color: #ffffff;
   }
+

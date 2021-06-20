@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Motorbike Store Admin</title>
     <link href="css/estilos.css" rel="stylesheet">
+    
     <script type="module" src="cmp/mi-footer.js"></script>
+    <script type="module" src="cmp/mi-nav.js"></script>
 
     <!-- Carga el núcleo de Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
@@ -26,6 +28,21 @@
         </h1>
     </header>
 
+    <nav>
+        <ul>
+            <h3>
+                <div class="btn-index">
+                    <a href="cliente.html">
+                        <button class="button">Pagina Principal cliente</button>
+                    </a>
+                    <a href="motocicletaNuevo.html">
+                        <button class="button">Agregar Nueva Motocicleta</button>
+                    </a>
+                </div>
+            </h3>
+        </ul>
+    </nav>
+
     <h1>Autenticación</h1>
     <h1>Sesión</h1>
     <fieldset>
@@ -38,7 +55,7 @@
     </fieldset>
     <figure><img id="avatar" alt="Avatar"></figure>
     <div class="btn-logout">
-        <button class="button" type="button" onclick="terminaSesión()">Terminar Sesión</button>
+        <button class="button1" type="button" onclick="terminaSesión()">Terminar Sesión</button>
     </div>
     <footer>Copyright &copy; 2021 Martinez Garcia Cristhian.</footer>
     <script>

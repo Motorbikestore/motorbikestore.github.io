@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+       initial-scale=1.0">
+  <title>
+    Nueva Motocicleta
+  </title>
+    
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <script src="js/init.js">
+  </script>
+  <script type="module" src="cmp/mi-nav.js">
+  </script>
+  <script type="module" src="cmp/mi-footer.js">
+  </script>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="nuevo  ">
+  <form action="form">
+    <header>
+      <h1>
+        <p class="titulo">
+          Nueva Motocicleta
+        </p>
+      </h1>
+    </header>
+
+    <p class="forma">
+      <label>
+        Nombre de Motocicleta
+        <input name="nombreMotocicleta" type="text" required>
+      </label>
+      <label>
+        Descripción
+        <input name="descripción" type="text" required>
+      </label>
+      <label>
+        Año
+        <input name="año" type="text" required>
+      </label>
+      <label>
+        Precio
+        <input name="precio" type="text" required>
+      </label>
+    </p>
+
+    <div class="btn-save">
+      <a href="index.html">
+        Cancelar
+      </a>
+      <button type="submit" class="btn-save button2">
+        Guardar
+      </button>
+    </div>
+
+    <mi-footer>
+    </mi-footer>
+  </form>
+  <script type="module" src="js/CtrlMotociletaNuevo.js">
+  </script>
+</body>
+
+</html>

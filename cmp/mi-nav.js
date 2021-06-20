@@ -35,13 +35,13 @@ class MiNav extends HTMLElement {
       const roles =
         await cargaRoles(
           usu.email);
-      if (roles.has("Cliente")) {
+     if (roles.has("Cliente")) {
         html += /* html */
           `<li>
             <a href=
-              "chat.html">Chat</a>
-              <a href="alumnos.html">
-            Alumno</a>
+              "chat.html">Chatear</a>
+            <a href=
+              "alumnos.html">alumnos</a>
           </li>`;
       }
       if (roles.has(
@@ -49,7 +49,7 @@ class MiNav extends HTMLElement {
         html += /* html */
           `<li>
             <a href=
-          "alumnos.html">Alumnos</a>
+"alumnos.html">Alumnos</a>
           </li>`;
       }
       this.ul.innerHTML += html;

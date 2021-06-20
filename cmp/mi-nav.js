@@ -38,19 +38,14 @@ class MiNav extends HTMLElement {
       if (roles.has("Cliente")) {
         html += /* html */
           `<li>
-            <a href=
-              "chat.html">Chatear</a>
-            <a href=
-              "verMotocicletas ">Ver Motocicletas</a>
+            <a href="chat.html">Chatear</a>
+            <a href="verMotocicletas">Ver Motocicletas</a>
           </li>`;
       }
-      this.ul.innerHTML += html;
-      if (roles.has(
-        "Administrador")) {
+      if (roles.has("Administrador")) {
         html += /* html */
           `<li>
-            <a href=
-"alumnos.html">Alumnos</a>
+            <a href="alumnos.html">Alumnos</a>
           </li>`;
       }
       this.ul.innerHTML += html;

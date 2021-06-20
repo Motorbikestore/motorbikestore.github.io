@@ -76,7 +76,7 @@ function htmlFila(doc) {
   const year = cod(data.year);
   const precio = cod(data.precio);
   const img = cod(
-    await urlStorage(doc.id));
+    await urlStorage(data.avatar));
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);

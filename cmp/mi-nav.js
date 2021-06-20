@@ -32,7 +32,7 @@ class MiNav extends HTMLElement {
      if (roles.has("Cliente")) {
         html += /* html */
           `<li>
-            <a href="cliente.html.html">Chat</a>
+            <a href="cliente.html">Chat</a>
           </li>`;
       }
       if (roles.has(

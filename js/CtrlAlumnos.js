@@ -85,7 +85,6 @@ function htmlFila(doc) {
           ${marca} ${nombre} ${year} ${precio} ${dformat} 
         </strong>
       </a>
-     
     </li>`);
 }
 

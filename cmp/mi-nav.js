@@ -57,6 +57,8 @@ class MiNav extends HTMLElement {
         "Administrador")) {
         html += /* html */
           `<li>
+          <button  href=
+          "motocicletas.html class="button1 ">Guardar</button>
             <a href=
           "motocicletas.html">Modificacion Motocicletas</a>
           </li>

@@ -8,7 +8,8 @@ export function
   location.href =
     "motocicletas.html";
 }
-export function muestramotocicletasCliente {
+
+export function muestramotocicletasCliente() {
   location:href = 
   "motocicletasCliente.html"
 }

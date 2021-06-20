@@ -43,10 +43,11 @@ class MiNav extends HTMLElement {
         <a href=
 "chat">Chat</a>
       </li>
-      <li>
-        <a href=
-  "usuarios.html">Usuarios</a>
-      </li>`
+  //     <li>
+  //       <a href=
+  // "usuarios.html">Usuarios</a>
+  //     </li>
+      `
           ;
       }
       /* Enlaces para solo
@@ -56,12 +57,13 @@ class MiNav extends HTMLElement {
         "Administrador")) {
         html += /* html */
           `<li>
-            <a href=
-"pasatiempos.html">Pasatiempos</a>
+            <a href="pasatiempos.html">Pasatiempos</a>
           </li>
           <li>
-            <a href=
-      "usuarios.html">Usuarios</a>
+          <a href="motocicletaNuevo.html">Registro de motocicletas</a>
+          </li>
+          <li>
+            <a href="usuarios.html">Usuarios</a>
           </li>`;
       }
       this.ul.innerHTML += html;

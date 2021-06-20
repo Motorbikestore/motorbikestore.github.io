@@ -39,7 +39,7 @@ class MiNav extends HTMLElement {
         html += /* html */
           `<li>
             <a href=
-              "Cliente.html">Cliente</a>
+              "cliente.html">Cliente</a>
           </li>`;
       }
       if (roles.has(

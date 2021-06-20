@@ -33,7 +33,7 @@ async function protege(usuario) {
 
 function consulta() {
   daoAlumno.
-    orderBy("modelo")
+    orderBy("nombre")
     .onSnapshot(
       htmlLista, errConsulta);
 }
@@ -67,7 +67,7 @@ function htmlFila(doc) {
                   Motocicleta} */
   const data = doc.data();
   const marca = cod(data.marca);
-  const modelo = cod(data.modelo);
+  const nombre = cod(data.nombre);
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
   var espacio="[   -   ]";
@@ -80,7 +80,7 @@ function htmlFila(doc) {
       <a class="fila" href=
   "alumno.html?${parámetros}">
         <strong class="primario">
-          ${marca} ${modelo} ${dformat}
+          ${marca} ${nombre} ${dformat}
         </strong>
       </a>
      

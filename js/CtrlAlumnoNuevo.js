@@ -40,7 +40,7 @@ async function guarda(evt) {
       new FormData(forma);
     const marca = getString(
         formData, "marca").trim();  
-    const modelo = getString(formData, "modelo").trim();
+    const nombre = getString(formData, "nombre").trim();
     const telefono = getString(formData, "telefono").trim();
     const grupo = getString(formData, "grupo").trim();
     const fecha = getString(formData, "fecha").trim();
@@ -50,7 +50,7 @@ async function guarda(evt) {
                 Motocicleta} */
     const modelo = {
       marca,
-      modelo,
+      nombre,
       telefono,
       grupo,
       fecha 

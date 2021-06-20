@@ -75,7 +75,16 @@ function htmlFila(doc) {
     new URLSearchParams();
   parámetros.append("id", doc.id);
   return ( /* html */
+
     `<li>
+    ${parámetros}
+      <strong class="primario">
+        ${marca} ${nombre} ${year} ${precio}
+      </strong>
+    
+  </li>`
+
+      `<li>
       <a class="fila" href=
   "motocicleta.html?${parámetros}">
         <strong class="primario">

@@ -43,7 +43,6 @@ async function guarda(evt) {
     const nombre = getString(formData, "nombre").trim();
     const year = getString(formData, "year").trim();
     const precio = getString(formData, "precio").trim();
-
     /**
      * @type {
         import("./tipos.js").

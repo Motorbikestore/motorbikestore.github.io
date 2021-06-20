@@ -71,6 +71,7 @@ function htmlFila(doc) {
   const nombre = cod(data.nombre);
   const year = cod(data.year);
   const precio = cod(data.precio);
+  const avatar = cod(data.avatar)
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -79,7 +80,7 @@ function htmlFila(doc) {
     `<li>
     <a class="fila" ${parámetros}">
       <strong class="primario">
-        ${marca} ${nombre} ${year} ${precio}
+        ${marca} ${nombre} ${year} ${precio} ${avatar}
       </strong>
     </li>`);
 }

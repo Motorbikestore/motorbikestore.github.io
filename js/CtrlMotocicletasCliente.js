@@ -81,16 +81,6 @@ function htmlFila(doc) {
       <strong class="primario">
         ${marca} ${nombre} ${year} ${precio}
       </strong>
-    
-  </li>
-
-      <li>
-      <a class="fila" href=
-  "motocicleta.html?${parámetros}">
-        <strong class="primario">
-          ${marca} ${nombre} ${year} ${precio}
-        </strong>
-      </a>
     </li>`);
 }
 

@@ -2,7 +2,10 @@ class MiFooter
   extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /* html */
-      `Copyright & Copy; 2021 Martinez Garcia Cristhian.`;
+      `<p>
+        &copy; 2021
+        Martinez Garcia Cristhian.
+      </p>`;
   }
 }
 

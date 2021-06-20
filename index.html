@@ -1,57 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>Sesión</title>
-  <!--
-    Carga el núcleo de Firebase
-    JS SDK
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motorbike Store Admin</title>
+    <link href="css/estilos.css" rel="stylesheet">
+    
+    <script type="module" src="cmp/mi-footer.js"></script>
+    <script type="module" src="cmp/mi-nav.js"></script>
+
+    <!-- Carga el núcleo de Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- Agrega el manejo de autenticación. -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js">
     </script>
-  <!--
-    Agrega el manejo de
-    autenticación.
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js">
-    </script>
-  <!--
+     <!--
     Agrega el manejo de bases de
     datos.
   -->
   <script
     src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js">
     </script>
-  <!--
-    Configura la app usando la
-    información del sitio de
-    Firebase.
-  -->
-  <script src="js/init.js">
-  </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-progreso.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
+    <script src="js/init.js"></script>
 </head>
+
 <body>
 
     <header>
         <h1>
             <p class="titulo">
-                Motorbike Store México Administrador
+                Motorbike Store México Administrador 
             </p>
         </h1>
     </header>
@@ -71,52 +50,73 @@
         </ul>
     </nav>
 
-
- <form name="forma">
-    <mi-nav></mi-nav>
-    <header>
     <h1>Autenticación</h1>
-
-      <h1>Sesión</h1>
-    </header>
-    <figure>
-      <img id="avatar" src=""
-        alt="Avatar">
-    </figure>
-    <p>
-      <label>
-        Email
-        <output name="email">   <progress max="100">Cargando…</progress>
-          <mi-progreso>
-          </mi-progreso>
-        </output>
-      </label>
-    </p>
-    <p>
-      <label>
-        Nombre
-        <output name="nombre">
-          <mi-progreso>
-          </mi-progreso>
-        </output>
-      </label>
-    </p>
-
+    <h1>Sesión</h1>
+    <fieldset>
+        <legend>Email</legend>
+        <output id="email"><progress max="100">Cargando…</progress></output>
+    </fieldset>
+    <fieldset>
+        <legend>Nombre</legend>
+        <output id="nombre"></output>
+    </fieldset>
+    <figure><img id="avatar" alt="Avatar"></figure>
     <div class="btn-logout">
-        <button
-        class="button1"
-        type="button"
-        name="terminarSesión">
-        Terminar Sesión
-      </button>
+        <button class="button1" type="button" onclick="terminaSesión()">Terminar Sesión</button>
     </div>
-
-
-
-    <mi-footer></mi-footer>
-  </form>
-  <script type="module"
-    src="js/CtrlSesion.js">
+    <footer>Copyright &copy; 2021 Martinez Garcia Cristhian.</footer>
+    <script>
+        //@ts-check
+        /** Conexión al sistema de autenticación de Firebase. */
+        // @ts-ignore
+        const auth = firebase.auth();
+        /** Tipo de autenticación de usuarios. En este caso es con Google. */
+        // @ts-ignore
+        const provider = new firebase.auth.GoogleAuthProvider();
+        /* Configura el proveedor de Google para que permita seleccionar de una
+         * lista. */
+        provider.setCustomParameters({ prompt: "select_account" });
+        /* Recibe una función que se invoca cada que hay un cambio en la
+         * autenticación y recibe el modelo con las características del usuario.*/
+        auth.onAuthStateChanged(
+            /** Recibe las características del usuario o null si no ha iniciado
+             * sesión. */
+            usuarioAuth => {
+                if (usuarioAuth && usuarioAuth.email) {
+                    // Usuario aceptado.
+                    // @ts-ignore Muestra el email registrado en Google.
+                    email.value = usuarioAuth.email;
+                    // @ts-ignore Muestra el nombre registrado en Google.
+                    nombre.value = usuarioAuth.displayName;
+                    // @ts-ignore Muestra el avatar registrado en Google.
+                    avatar.src = usuarioAuth.photoURL;
+                } else {
+                    // No ha iniciado sesión. Pide datos para iniciar sesión.
+                    auth.signInWithRedirect(provider);
+                }
+            },
+            // Función que se invoca si hay un error al verificar el usuario. //
+            procesaError
+        );
+        /** Termina la sesión. */
+        async function terminaSesión() {
+            try {
+                await auth.signOut();
+            } catch (e) {
+                procesaError(e);
+            }
+        }
+        /** Procesa un error. Muestra el objeto en la consola y un cuadro de
+         * alerta con el mensaje.
+         * @param {Error} e descripción del error. */
+        function procesaError(e) {
+            console.log(e);
+            alert(e.message);
+        }
     </script>
+
+    <mi-footer>
+    </mi-footer>
 </body>
+
 </html>

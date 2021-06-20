@@ -67,13 +67,14 @@ function htmlFila(doc) {
                   Motocicleta} */
   const data = doc.data();
   const marca = cod(data.marca);
+  const marca = cod(data.marca);
   const nombre = cod(data.nombre);
   const year = cod(data.year);
   // const precio = cond(data.precio);
-  var fsf= cod(data.fecha);
+  var fsf = cod(data.fecha);
   var fecha = new Date(fsf);
-  var espacio="[   -   ]";
-  var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
+  var espacio = "[   -   ]";
+  var dformat = [fecha.getDate() + 1, fecha.getMonth() + 1, fecha.getFullYear()].join('/');
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -82,7 +83,7 @@ function htmlFila(doc) {
       <a class="fila" href=
   "alumno.html?${parámetros}">
         <strong class="primario">
-          ${marca} ${nombre} ${year} ${dformat} 
+        ${marca} ${marca} ${nombre} ${year} ${dformat} 
         </strong>
       </a>
     </li>`);

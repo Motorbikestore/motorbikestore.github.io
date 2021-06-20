@@ -97,13 +97,3 @@ p label>* {
   color: white;
 }
 
-.button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #36bef4;
-}
-
-.button2:hover {
-  background-color: #36bef4;
-  color: white;
-}

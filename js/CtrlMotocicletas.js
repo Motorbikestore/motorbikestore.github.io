@@ -75,7 +75,6 @@ function htmlFila(doc) {
   const nombre = cod(data.nombre);
   const year = cod(data.year);
   const precio = cod(data.precio);
-  const img = cod(data.avatar);
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -84,8 +83,6 @@ function htmlFila(doc) {
       <a class="fila" href=
   "motocicleta.html?${parámetros}">
         <strong class="primario">
-        <img src="${img}"
-        alt="Falta el Avatar">
           ${marca} ${nombre} ${year} ${precio}
         </strong>
       </a>

@@ -51,7 +51,7 @@ async function busca() {
                   Alumno} */
       const data = doc.data();
       forma.marca.value = data.marca;
-      forma.nombre.value = data.nombre || "";
+      forma.modelo.value = data.modelo || "";
       forma.telefono.value = data.telefono || "";
       forma.grupo.value = data.grupo || "";
       forma.fecha.value = data.fecha || "";
@@ -78,7 +78,7 @@ async function guarda(evt) {
       new FormData(forma);
     const marca = getString(
         formData, "marca").trim();  
-    const nombre = getString(formData, "nombre").trim();
+    const modelo = getString(formData, "modelo").trim();
     const telefono = getString(formData, "telefono").trim();
     const grupo = getString(formData, "grupo").trim();
     const fecha = getString(formData, "fecha").trim();
@@ -88,7 +88,7 @@ async function guarda(evt) {
                 Alumno} */
     const modelo = {
       marca, 
-      nombre,
+      modelo,
       telefono,
       grupo,
       fecha

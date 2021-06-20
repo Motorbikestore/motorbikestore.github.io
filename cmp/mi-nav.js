@@ -7,9 +7,6 @@ import {
 import {
   muestraError
 } from "../lib/util.js";
-import{
-
-}
 
 class MiNav extends HTMLElement {
   connectedCallback() {
